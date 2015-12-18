@@ -1,0 +1,16 @@
+{
+  "name": "wagtailfontawesome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp"
+  },
+  "author": "Alex Gleason",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "font-awesome": "^4.5.0",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.1"
+  }
+}
