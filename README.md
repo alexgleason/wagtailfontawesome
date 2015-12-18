@@ -1,4 +1,4 @@
-Wagtail Font Awesome
+Wagtail FontAwesome
 ====================
 Add [FontAwesome](https://github.com/FortAwesome/Font-Awesome) icons to StreamField.
 
