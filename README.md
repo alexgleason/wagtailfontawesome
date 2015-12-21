@@ -6,11 +6,10 @@ Add [FontAwesome](https://github.com/FortAwesome/Font-Awesome) icons to StreamFi
 
 Install
 -------
-This package is not yet available through pip. To use it now, clone the repo and run:
 
-    npm install && npm run build
+    pip install wagtailfontawesome
 
-Then copy the folder to your project and add `yourapp.wagtailfontawesome` to your installed apps.
+Then add `wagtailfontawesome` to your installed apps.
 
 Usage
 -----

@@ -1,2 +1,6 @@
 node_modules/
 wagtailfontawesome/static/
+wagtailfontawesome.egg-info/
+dist/
+build/
+*.pyc
