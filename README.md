@@ -13,4 +13,4 @@ Then add `wagtailfontawesome` to your installed apps.
 
 Usage
 -----
-Add FontAwesome icons to StreamField the regular way, just set `icon="fa-something"`. Reference [the full list](http://fontawesome.io/icons/).
+Add FontAwesome icons to StreamField [the regular way](http://docs.wagtail.io/en/latest/topics/streamfield.html#basic-block-types), just set `icon="fa-something"`. Reference [the full list](http://fontawesome.io/icons/).
