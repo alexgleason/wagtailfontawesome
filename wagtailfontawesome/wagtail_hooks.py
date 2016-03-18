@@ -4,7 +4,7 @@ from django.conf import settings
 from wagtail.wagtailcore import hooks
 
 
-@hooks.register('insert_editor_css')
+@hooks.register('insert_global_admin_css')
 def allow_font_awesome_icons():
     return format_html('<link rel="stylesheet" href="'
                        + settings.STATIC_URL
