@@ -22,10 +22,37 @@ Add FontAwesome icons to StreamField [the regular way](http://docs.wagtail.io/en
 ### Hallo plugins
 You can use FontAwesome icons on custom Hallo buttons by setting the `icon` option to `icon icon-fa-something`.
 
-    button.hallobutton({
-      label: "Blockquote",
-      icon: 'icon icon-fa-quote-left',
-    });
+```javascript
+button.hallobutton({
+  label: "Blockquote",
+  icon: 'icon icon-fa-quote-left',
+});
+```
 
 ### Other areas
-You can include icons anywhere with `<i class="icon icon-fa-something"></i>`. In Wagtail 1.3.x and below you can only use icons on the page editor screen.
+You can include icons anywhere with:
+
+```html
+<i class="icon icon-fa-something"></i>
+```
+
+In Wagtail 1.3.x and below you can only use icons on the page editor screen.
+
+### Using wagtailfontawesome as an optional dependency
+If you want to distribute a Wagtail plugin with FontAwesome icons, you can use this package as an optional dependency by checking if it's installed in Django, and falling back otherwise.
+
+```python
+from django.conf import settings
+from wagtail.wagtailcore.blocks import StructBlock
+
+
+class BlockquoteBlock(StructBlock):
+    quote = TextBlock()
+    author = TextBlock()
+
+    class Meta:
+        if 'wagtailfontawesome' in settings.INSTALLED_APPS:
+            icon = 'fa-quote-left'
+```
+
+(in this case, the fallback is to do nothing)
