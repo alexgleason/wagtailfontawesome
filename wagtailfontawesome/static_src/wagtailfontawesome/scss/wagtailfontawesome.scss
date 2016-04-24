@@ -1,7 +1,7 @@
 $fa-css-prefix: icon-fa;
 @import "font-awesome/scss/font-awesome";
 
-.icon[class^="#{$fa-css-prefix}"]:before,
-.icon[class*=" #{$fa-css-prefix}"]:before {
+.icon[class^="#{$fa-css-prefix}-"]:before,
+.icon[class*=" #{$fa-css-prefix}-"]:before {
   font-family: 'FontAwesome';
 }
