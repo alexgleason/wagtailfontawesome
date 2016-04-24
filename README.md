@@ -29,14 +29,29 @@ button.hallobutton({
 });
 ```
 
-### Other areas
-You can include icons anywhere with:
+### Other parts of the admin
+You can include icons anywhere in the admin with:
 
 ```html
 <i class="icon icon-fa-something"></i>
 ```
 
 In Wagtail 1.3.x and below you can only use icons on the page editor screen.
+
+### On the front-end
+You can also import this on the front-end, if you want.
+
+```html
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static 'wagtailfontawesome/css/wagtailfontawesome.css' %}">
+```
+
+Then include icons anywhere on the front-end with:
+
+```html
+<i class="icon icon-fa-something"></i>
+```
 
 ### Using wagtailfontawesome as an optional dependency
 If you want to distribute a Wagtail plugin with FontAwesome icons, you can use this package as an optional dependency by checking if it's installed in Django, and falling back otherwise.
