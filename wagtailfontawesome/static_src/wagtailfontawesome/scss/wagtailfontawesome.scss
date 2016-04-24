@@ -1,7 +1,12 @@
 $fa-css-prefix: icon-fa;
 @import "font-awesome/scss/font-awesome";
 
-.icon[class^="#{$fa-css-prefix}-"]:before,
-.icon[class*=" #{$fa-css-prefix}-"]:before {
-  font-family: 'FontAwesome';
+/* `.stream-menu` is for backwards-compatibility with very old Wagtail versions. */
+.icon, .stream-menu .icon {
+  &[class^="#{$fa-css-prefix}-"],
+  &[class*=" #{$fa-css-prefix}-"] {
+    &:before {
+      font-family: 'FontAwesome';
+    }
+  }
 }
