@@ -9,7 +9,7 @@
   "author": "Alex Gleason",
   "license": "GPL-3.0",
   "devDependencies": {
-    "font-awesome": "^4.6.1",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.0",
     "gulp-sass": "^2.1.1"
   }
