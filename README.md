@@ -7,7 +7,9 @@ Add [FontAwesome](https://github.com/FortAwesome/Font-Awesome) icons to StreamFi
 Install
 -------
 
-    pip install wagtailfontawesome
+```shell
+pip install wagtailfontawesome
+```
 
 Then add `wagtailfontawesome` to your installed apps.
 
