@@ -59,7 +59,7 @@ Then include icons anywhere on the front-end with:
 If you want to distribute a Wagtail plugin with FontAwesome icons, you can use this package as an optional dependency by checking if it's installed in Django, and falling back otherwise.
 
 ```python
-from django.conf import settings
+from django.apps import apps
 from wagtail.wagtailcore.blocks import StructBlock
 
 
@@ -68,7 +68,7 @@ class BlockquoteBlock(StructBlock):
     author = TextBlock()
 
     class Meta:
-        if 'wagtailfontawesome' in settings.INSTALLED_APPS:
+        if apps.is_installed('wagtailfontawesome'):
             icon = 'fa-quote-left'
 ```
 
