@@ -1,6 +1,6 @@
 {
   "name": "wagtailfontawesome",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,9 @@
   "devDependencies": {
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.1.1"
+    "gulp-clean-css": "^3.9.0",
+    "gulp-gzip": "^1.4.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-sass-unicode": "^1.0.1"
   }
 }
