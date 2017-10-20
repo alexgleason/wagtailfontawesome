@@ -7,6 +7,7 @@ $fa-css-prefix: icon-fa;
   &[class*=" #{$fa-css-prefix}-"] {
     &:before {
       font-family: 'FontAwesome';
+      font-style: normal;
     }
   }
 }
