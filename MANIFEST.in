@@ -1,1 +1,2 @@
 recursive-include wagtailfontawesome/static *
+recursive-include wagtailfontawesome/templatetags *
