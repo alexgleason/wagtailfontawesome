@@ -4,8 +4,12 @@ from django.utils.html import format_html
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
 
-from wagtail.wagtailcore import hooks
-from wagtail.wagtailcore import __version__ as WAGTAIL_VERSION
+try:
+    from wagtail.core import hooks
+    from wagtail import __version__ as WAGTAIL_VERSION
+except ImportError:
+    from wagtail.wagtailcore import hooks
+    from wagtail.wagtailcore import __version__ as WAGTAIL_VERSION
 
 
 def import_wagtailfontawesome_stylesheet():

@@ -74,7 +74,10 @@ If you want to distribute a Wagtail plugin with FontAwesome icons, you can use t
 
 ```python
 from django.apps import apps
-from wagtail.wagtailcore.blocks import StructBlock
+try:
+    from wagtail.core.blocks import StructBlock
+except ImportError:  # fallback for Wagtail <2.0
+    from wagtail.wagtailcore.blocks import StructBlock
 
 
 class BlockquoteBlock(StructBlock):
