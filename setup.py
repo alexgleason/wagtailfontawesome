@@ -7,7 +7,8 @@ import subprocess
 from os import path
 
 from setuptools import find_packages, setup
-from setuptools.command.egg_info import egg_info as base_egg_info
+from setuptools.command.sdist import sdist as base_sdist
+from setuptools.command.bdist_egg import bdist_egg as base_bdist_egg
 
 from wagtailfontawesome import __version__
 
@@ -66,17 +67,25 @@ def md2pypi(filename):
 long_description = md2pypi('README.md')
 
 
-class egg_info(base_egg_info):
-    def run(self):
-        self.compile_assets()
-        base_egg_info.run(self)
-
+class assets_mixin:
     def compile_assets(self):
         try:
             subprocess.check_call(['npm', 'run', 'build'])
         except (OSError, subprocess.CalledProcessError) as e:
             print('Error compiling assets: ' + str(e))
             raise SystemExit(1)
+
+
+class sdist(base_sdist, assets_mixin):
+    def run(self):
+        self.compile_assets()
+        base_sdist.run(self)
+
+
+class bdist_egg(base_bdist_egg, assets_mixin):
+    def run(self):
+        self.compile_assets()
+        base_bdist_egg.run(self)
 
 
 setup(
@@ -105,5 +114,8 @@ setup(
         "wagtail>=1.4.0",
         "Django>=1.7.1",
     ],
-    cmdclass={'egg_info': egg_info},
+    cmdclass={
+        'sdist': sdist,
+        'bdist_egg': bdist_egg,
+    },
 )
