@@ -40,7 +40,7 @@ button.hallobutton({
 
 You can include icons anywhere in the admin with:
 
-```html
+```html+django
 <i class="icon icon-fa-something"></i>
 ```
 
@@ -50,7 +50,7 @@ In Wagtail 1.3.x and below you can only use icons on the page editor screen.
 
 You can also include the CSS on the front end, and follow FontAwesome's documentation.
 
-```html
+```html+django
 {% load wagtailfontawesome %}
 
 {% fontawesome_css %}
@@ -58,13 +58,13 @@ You can also include the CSS on the front end, and follow FontAwesome's document
 
 This will generate equivalent markup to:
 
-```html
+```html+django
 <link rel="stylesheet" href="{% static 'wagtailfontawesome/css/fontawesome.css' %}">
 ```
 
 Then include icons anywhere on the front-end with:
 
-```html
+```html+django
 <i class="fa fa-something"></i>
 ```
 
