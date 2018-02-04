@@ -3,4 +3,5 @@ wagtailfontawesome/static/
 wagtailfontawesome.egg-info/
 dist/
 build/
+__pycache__
 *.pyc
