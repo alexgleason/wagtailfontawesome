@@ -3,7 +3,7 @@ cache: pip
 
 matrix:
   include:
-    - env: TOXENV="docs"
+    - env: TOXENV="flake8,isort,docs"
       python: '3.6'
 
 install:
