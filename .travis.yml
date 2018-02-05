@@ -8,7 +8,9 @@ matrix:
 
 install:
   - pip install --upgrade pip wheel tox
+  - pip install coveralls
 
 script:
   - tox
 
+after_success: coveralls
