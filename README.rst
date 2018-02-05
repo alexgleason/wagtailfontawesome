@@ -5,6 +5,8 @@ Wagtail FontAwesome
     :target: https://travis-ci.org/alexgleason/wagtailfontawesome
 .. image:: https://coveralls.io/repos/github/alexgleason/wagtailfontawesome/badge.svg?branch=master
     :target: https://coveralls.io/github/alexgleason/wagtailfontawesome?branch=master
+.. image:: https://img.shields.io/github/license/mashape/apistatus.svg
+    :target: https://github.com/alexgleason/wagtailfontawesome/blob/master/LICENSE
 
 Add `FontAwesome <https://github.com/FortAwesome/Font-Awesome>`_ icons to StreamField.
 
