@@ -1,0 +1,14 @@
+language: python
+cache: pip
+
+matrix:
+  include:
+    - env: TOXENV="docs"
+      python: '3.6'
+
+install:
+  - pip install --upgrade pip wheel tox
+
+script:
+  - tox
+
