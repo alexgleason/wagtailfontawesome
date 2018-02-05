@@ -12,59 +12,11 @@ from setuptools.command.bdist_egg import bdist_egg as base_bdist_egg
 
 from wagtailfontawesome import __version__
 
-RE_MD_CODE_BLOCK = re.compile(r'```(?P<language>\w+)?\n(?P<lines>.*?)```', re.S)
-RE_LINK = re.compile(r'\[(?P<text>.*?)\]\((?P<url>.*?)\)')
-RE_IMAGE = re.compile(r'\!\[(?P<text>.*?)\]\((?P<url>.*?)\)')
-RE_TITLE = re.compile(r'^(?P<level>#+)\s*(?P<title>.*)$', re.M)
-RE_CODE = re.compile(r'``([^<>]*?)``')
-
-RST_TITLE_LEVELS = ['=', '-', '~']
-
 GITHUB_REPOSITORY = 'https://github.com/alexgleason/wagtailfontawesome'
 
 
-def md2pypi(filename):
-    '''
-    Load .md (markdown) file and sanitize it for PyPI.
-    '''
-    content = io.open(filename).read()
-
-    for match in RE_MD_CODE_BLOCK.finditer(content):
-        rst_block = '\n'.join(
-            ['.. code-block:: {language}'.format(**match.groupdict()), ''] +
-            ['    {0}'.format(l) for l in match.group('lines').split('\n')] +
-            ['']
-        )
-        content = content.replace(match.group(0), rst_block)
-
-    for match in RE_IMAGE.finditer(content):
-        url = match.group('url')
-        if not url.startswith('http'):
-            url = '/'.join((GITHUB_REPOSITORY, 'raw/master', url))
-
-        rst_block = '\n'.join([
-            '.. image:: {0}'.format(url),
-            '  :alt: {0}'.format(match.group('text'))
-        ])
-        content = content.replace(match.group(0), rst_block)
-
-    content = RE_LINK.sub('`\g<text> <\g<url>>`_', content)
-    content = RE_CODE.sub('``\g<1>``', content)
-
-    for match in RE_TITLE.finditer(content):
-        level = len(match.group('level')) - 1
-        underchar = RST_TITLE_LEVELS[level]
-        title = match.group('title')
-        underline = underchar * len(title)
-
-        full_title = '\n'.join((title, underline))
-        content = content.replace(match.group(0), full_title)
-
-    return content
-
-
-# Get the long description from the README file
-long_description = md2pypi('README.md')
+with open('README.rst', 'r') as readme:
+    long_description = readme.read()
 
 
 class assets_mixin:
