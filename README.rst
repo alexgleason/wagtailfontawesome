@@ -8,7 +8,7 @@ Wagtail FontAwesome
 .. image:: https://img.shields.io/github/license/mashape/apistatus.svg
     :target: https://github.com/alexgleason/wagtailfontawesome/blob/master/LICENSE
 
-Add `FontAwesome 4.7 <https://fontawesome.com/v4.7.0/>`_ icons to StreamField.
+Add `FontAwesome 4.7 <https://fontawesome.com/v4.7.0/>`_ icons to your Wagtail project.
 
 .. image:: https://raw.githubusercontent.com/alexgleason/wagtailfontawesome/master/screenshot.png
     :alt: Screenshot
