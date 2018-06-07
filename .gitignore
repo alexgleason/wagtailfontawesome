@@ -1,9 +1,0 @@
-node_modules/
-wagtailfontawesome/static/
-wagtailfontawesome.egg-info/
-dist/
-build/
-__pycache__
-*.pyc
-.tox
-package-lock.json
